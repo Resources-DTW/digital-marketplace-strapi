@@ -368,15 +368,20 @@ export interface ApiProductProduct extends Schema.CollectionType {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'Product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String & Attribute.Required;
-    Description: Attribute.Blocks;
-    Banner: Attribute.Media;
-    Pricing: Attribute.Decimal;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Blocks;
+    banner: Attribute.Media;
+    pricing: Attribute.Decimal;
+    instantDelivery: Attribute.Boolean;
+    files: Attribute.Media;
+    whatsIncluded: Attribute.Blocks;
+    category: Attribute.Enumeration<['Source Code', 'Licence Key', 'UI Kit']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
